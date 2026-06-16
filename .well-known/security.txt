@@ -1,0 +1,4 @@
+Contact: mailto:ggaurav8851@gmail.com
+Expires: 2027-01-01T00:00:00Z
+Preferred-Languages: en
+Canonical: https://ecopulse-537813146573.asia-south1.run.app/.well-known/security.txt

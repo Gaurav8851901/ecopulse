@@ -95,6 +95,45 @@ const REDUCTION_ACTIONS = [
 ];
 
 // App State Model
+/**
+ * Environmental emission constants
+ * Values are kg CO2e per unit.
+ */
+const EMISSION_FACTORS = {
+
+    electricity: {
+        normal: 0.45,
+        partialRenewable: 0.225,
+        fullRenewable: 0
+    },
+
+    gas: 5.3,
+
+    transport: {
+        gasoline: 0.404,
+        hybrid: 0.22,
+        electric: 0.08
+    },
+
+    flight: 250,
+
+    transit: 0.14,
+
+    waste: 2.5
+};
+
+
+/**
+ * Diet footprint values
+ * Annual tons CO2e.
+ */
+const DIET_IMPACT = {
+    meatHeavy: 3.3,
+    average: 2.2,
+    vegetarian: 1.7,
+    vegan: 1.5
+};
+
 let appState = {
   calculatorInputs: {
     electricity: 250, // kWh / month
@@ -424,6 +463,16 @@ function updateCalculatorValues() {
 }
 
 // Triggered when clicking "Save Footprint & Calculate"
+
+/**
+ * Saves the user's calculated footprint.
+ *
+ * Stores results locally and updates UI.
+ *
+ * @returns {void}
+ */
+
+
 function saveCalculationResult() {
   const breakdown = calculateCurrentEmissions();
   appState.footprintBreakdown = breakdown;
@@ -870,6 +919,14 @@ function completeAction(actionId, refreshDashboard = false) {
 }
 
 // Generate Personalized guidelines inside Insights
+
+/**
+ * Generates personalized sustainability actions
+ * based on calculated emissions.
+ *
+ * @returns {void}
+ */
+
 function renderRecommendations() {
   const container = document.getElementById("insights-recommendations");
   if (!container) return;
