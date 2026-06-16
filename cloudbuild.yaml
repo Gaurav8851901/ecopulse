@@ -1,0 +1,31 @@
+steps:
+  # Step 1: Build the container image using the project's Dockerfile
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t', 'gcr.io/$PROJECT_ID/carbon-tracker:$COMMIT_SHA',
+      '-t', 'gcr.io/$PROJECT_ID/carbon-tracker:latest',
+      '.'
+    ]
+
+  # Step 2: Push the container images to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/carbon-tracker:$COMMIT_SHA']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/carbon-tracker:latest']
+
+  # Step 3: Deploy the container image to Google Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args: [
+      'run', 'deploy', 'carbon-tracker',
+      '--image', 'gcr.io/$PROJECT_ID/carbon-tracker:$COMMIT_SHA',
+      '--region', 'us-central1',
+      '--platform', 'managed',
+      '--allow-unauthenticated'
+    ]
+
+# Track outputs
+images:
+  - 'gcr.io/$PROJECT_ID/carbon-tracker:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/carbon-tracker:latest'
