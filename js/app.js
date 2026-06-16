@@ -300,6 +300,18 @@ function selectRecycling(val) {
 }
 
 // Live calculation algorithms
+/**
+ * Calculates the user's annual carbon footprint.
+ *
+ * Uses user inputs from appState.calculatorInputs
+ * and calculates emissions from:
+ * - Home energy
+ * - Transportation
+ * - Diet
+ * - Waste
+ *
+ * @returns {Object} Carbon footprint breakdown in tons of CO2e
+ */
 function calculateCurrentEmissions() {
   const inputs = appState.calculatorInputs;
   

@@ -98,3 +98,35 @@ Emission coefficients are modelled on standard IPCC (Intergovernmental Panel on 
 - **Public Transit**: `0.14 kg CO2e / passenger mile` (bus/train averages).
 - **Diets**: Annual baseline tons CO2e: Meat Lover (`3.3t`), Average Balanced (`2.2t`), Vegetarian (`1.7t`), Vegan (`1.5t`).
 - **Household Trash**: `2.50 kg CO2e / standard bag`, adjustable based on local recycling/composting habits.
+
+---
+
+## 🌱 Problem Statement
+
+Climate change is influenced by daily human activities such as energy consumption, transportation, food choices, and waste generation.
+
+EcoTrace helps individuals understand their personal carbon footprint, identify major emission sources, and take practical steps to reduce environmental impact.
+
+
+## ✨ Key Features
+
+- Personal carbon footprint calculator
+- Emission breakdown by:
+  - Energy
+  - Transportation
+  - Diet
+  - Waste
+- Personalized sustainability recommendations
+- Carbon reduction goal tracking
+- Interactive impact visualization
+- Privacy-focused client-side storage
+
+
+## 🧪 Testing
+
+The project includes automated JavaScript tests.
+
+Run tests:
+
+```bash
+npm test

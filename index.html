@@ -96,7 +96,7 @@
           <h2 id="section-title">Dashboard Overview</h2>
         </div>
         <div class="header-actions">
-          <button class="btn-primary" id="header-calc-btn" onclick="switchTab('calculator')">
+          <button type="button" class="btn-primary" id="header-calc-btn" onclick="switchTab('calculator')">
             <i data-lucide="plus"></i>
             <span>Calculate Footprint</span>
           </button>
@@ -225,16 +225,16 @@
             <div class="calculator-wizard glass-card">
               <!-- Sub-tabs for Calculator Categories -->
               <div class="calc-tabs">
-                <button class="calc-tab active" id="tab-energy" onclick="switchCalcTab('energy')">
+                <button type="button" class="calc-tab active" id="tab-energy" onclick="switchCalcTab('energy')">
                   <i data-lucide="home"></i> Energy
                 </button>
-                <button class="calc-tab" id="tab-transport" onclick="switchCalcTab('transport')">
+                <button type="button" class="calc-tab" id="tab-transport" onclick="switchCalcTab('transport')">
                   <i data-lucide="car"></i> Transport
                 </button>
-                <button class="calc-tab" id="tab-diet" onclick="switchCalcTab('diet')">
+                <button type="button" class="calc-tab" id="tab-diet" onclick="switchCalcTab('diet')">
                   <i data-lucide="sandwich"></i> Diet
                 </button>
-                <button class="calc-tab" id="tab-waste" onclick="switchCalcTab('waste')">
+                <button type="button" class="calc-tab" id="tab-waste" onclick="switchCalcTab('waste')">
                   <i data-lucide="trash-2"></i> Waste
                 </button>
               </div>
@@ -441,7 +441,7 @@
               <h4 class="widget-feedback low" id="calc-feedback-rating">Moderate Emissions</h4>
               <p class="widget-comparison" id="calc-comparison-text">Your footprint is about 80% of the US national average (16 tons).</p>
               
-              <button class="btn-primary btn-save-footprint" id="btn-save-calculation" onclick="saveCalculationResult()">
+              <button type="button" class="btn-primary btn-save-footprint" id="btn-save-calculation" onclick="saveCalculationResult()">
                 <i data-lucide="save"></i>
                 <span>Save Footprint & Calculate</span>
               </button>
@@ -454,11 +454,11 @@
         <section id="action-plan" class="page-section" aria-labelledby="section-title">
           
           <div class="action-filter-bar">
-            <button class="filter-btn active" id="filter-all" onclick="filterActions('all')">All Challenges</button>
-            <button class="filter-btn" id="filter-high" onclick="filterActions('high')">High Impact</button>
-            <button class="filter-btn" id="filter-medium" onclick="filterActions('medium')">Medium Impact</button>
-            <button class="filter-btn" id="filter-low" onclick="filterActions('low')">Low Impact</button>
-            <button class="filter-btn" id="filter-committed" onclick="filterActions('committed')">My Active Goals</button>
+            <button type="button" class="filter-btn active" id="filter-all" onclick="filterActions('all')">All Challenges</button>
+            <button type="button" class="filter-btn" id="filter-high" onclick="filterActions('high')">High Impact</button>
+            <button type="button" class="filter-btn" id="filter-medium" onclick="filterActions('medium')">Medium Impact</button>
+            <button type="button" class="filter-btn" id="filter-low" onclick="filterActions('low')">Low Impact</button>
+            <button type="button" class="filter-btn" id="filter-committed" onclick="filterActions('committed')">My Active Goals</button>
           </div>
           
           <div class="actions-grid" id="actions-grid-container">
