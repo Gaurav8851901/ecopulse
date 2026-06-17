@@ -1,60 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Track, calculate, and actively reduce your personal carbon footprint with EcoTrace. Get personalized green living guidelines, interactive metrics, and daily eco challenges.">
+  <meta name="description"
+    content="Track, calculate, and actively reduce your personal carbon footprint with EcoTrace. Get personalized green living guidelines, interactive metrics, and daily eco challenges.">
   <title>EcoTrace | Personal Carbon Footprint Tracker & Reduction Guide</title>
-  
+
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <div class="app-container">
-    
+
     <!-- Desktop Sidebar Navigation -->
     <aside class="sidebar glass" aria-label="Main Navigation">
       <div class="logo-container">
         <div class="logo-icon">
           <!-- Eco Leaf Icon SVG -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 8a7 7 0 0 1-9 10Z"/>
-            <path d="M9 22v-4"/>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 8a7 7 0 0 1-9 10Z" />
+            <path d="M9 22v-4" />
           </svg>
         </div>
         <span class="logo-text">EcoTrace</span>
       </div>
-      
+
       <nav style="flex: 1;">
         <ul class="nav-links">
           <li class="nav-item">
-            <a href="#dashboard" class="nav-link active" id="nav-dash" onclick="switchTab('dashboard')">
+            <a href="#dashboard" class="nav-link active" id="nav-dash" onclick="switchTab('dashboard')"
+              aria-label="Open Dashboard section" aria-current="page">
               <i data-lucide="layout-dashboard"></i>
               <span>Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#calculator" class="nav-link" id="nav-calc" onclick="switchTab('calculator')">
+            <a href="#calculator" class="nav-link" id="nav-calc" onclick="switchTab('calculator')"
+              aria-label="Open Calculator section">
               <i data-lucide="calculator"></i>
               <span>Calculator</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#action-plan" class="nav-link" id="nav-action" onclick="switchTab('action-plan')">
+            <a href="#action-plan" class="nav-link" id="nav-action" onclick="switchTab('action-plan')"
+              aria-label="Open Action Plan section" >
               <i data-lucide="leaf"></i>
               <span>Action Plan</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#insights" class="nav-link" id="nav-insights" onclick="switchTab('insights')">
+            <a href="#insights" class="nav-link" id="nav-insights" onclick="switchTab('insights')"
+              aria-label="Open Insights section">
               <i data-lucide="line-chart"></i>
               <span>Insights</span>
             </a>
           </li>
         </ul>
       </nav>
-      
+
       <div class="sidebar-footer">
         <div class="profile-card">
           <div class="profile-avatar" id="avatar-letters">US</div>
@@ -88,7 +96,7 @@
 
     <!-- Main Content Container -->
     <main class="main-content">
-      
+
       <!-- Top Header -->
       <header class="header">
         <div class="header-title">
@@ -96,19 +104,20 @@
           <h2 id="section-title">Dashboard Overview</h2>
         </div>
         <div class="header-actions">
-          <button type="button" class="btn-primary" id="header-calc-btn" onclick="switchTab('calculator')">
+          <button type="button" class="btn-primary" id="header-calc-btn" onclick="switchTab('calculator')"
+            aria-label="Open carbon footprint calculator">
             <i data-lucide="plus"></i>
             <span>Calculate Footprint</span>
           </button>
         </div>
       </header>
-      
+
       <!-- Interactive Sections -->
       <div class="content-body">
-        
+
         <!-- SECTION 1: DASHBOARD -->
         <section id="dashboard" class="page-section active" aria-labelledby="section-title">
-          
+
           <div class="summary-cards-container">
             <!-- Total Footprint Card -->
             <div class="glass-card summary-card orange glow-green">
@@ -126,7 +135,7 @@
                 <i data-lucide="alert-triangle"></i> No calculations recorded yet
               </div>
             </div>
-            
+
             <!-- Carbon Savings Card -->
             <div class="glass-card summary-card green glow-green">
               <div class="summary-card-bg-glow"></div>
@@ -143,7 +152,7 @@
                 <i data-lucide="sparkles"></i> 0 committed actions completed
               </div>
             </div>
-            
+
             <!-- Active Commitments Card -->
             <div class="glass-card summary-card cyan glow-green">
               <div class="summary-card-bg-glow"></div>
@@ -161,7 +170,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="dashboard-grid">
             <!-- Carbon Breakdown Chart -->
             <div class="glass-card chart-card">
@@ -176,12 +185,13 @@
               <div class="chart-wrapper">
                 <canvas id="carbonChart"></canvas>
                 <div id="chart-placeholder" style="position: absolute; text-align: center; color: var(--neutral-400);">
-                  <i data-lucide="bar-chart-2" style="width: 48px; height: 48px; margin-bottom: 1rem; opacity: 0.5;"></i>
+                  <i data-lucide="bar-chart-2"
+                    style="width: 48px; height: 48px; margin-bottom: 1rem; opacity: 0.5;"></i>
                   <p>Complete your carbon calculation to generate chart breakdown</p>
                 </div>
               </div>
             </div>
-            
+
             <!-- Badge & Level Progress -->
             <div class="glass-card badge-card">
               <div class="badge-graphic-container">
@@ -191,8 +201,9 @@
                 </div>
               </div>
               <h3 class="badge-level-name" id="badge-level">Eco Explorer</h3>
-              <p style="font-size: 0.85rem; color: var(--neutral-400); margin-bottom: 1rem;">Complete actions to level up your ecological rank!</p>
-              
+              <p style="font-size: 0.85rem; color: var(--neutral-400); margin-bottom: 1rem;">Complete actions to level
+                up your ecological rank!</p>
+
               <div class="badge-progress-container">
                 <div class="badge-progress-bar">
                   <div class="badge-progress-fill" id="badge-progress-bar"></div>
@@ -203,25 +214,26 @@
                 </div>
               </div>
             </div>
-            
+
             <!-- Quick Recommended Actions -->
             <div class="glass-card dashboard-actions-card">
               <div class="chart-header">
                 <h3>Recommended Action Challenges</h3>
-                <span style="font-size: 0.85rem; color: var(--primary); cursor: pointer;" onclick="switchTab('action-plan')">View All</span>
+                <span style="font-size: 0.85rem; color: var(--primary); cursor: pointer;"
+                  onclick="switchTab('action-plan')">View All</span>
               </div>
               <div class="quick-actions-list" id="dashboard-quick-actions">
                 <!-- Will be populated dynamically -->
               </div>
             </div>
           </div>
-          
+
         </section>
-        
+
         <!-- SECTION 2: CALCULATOR -->
         <section id="calculator" class="page-section" aria-labelledby="section-title">
           <div class="calculator-container">
-            
+
             <div class="calculator-wizard glass-card">
               <!-- Sub-tabs for Calculator Categories -->
               <div class="calc-tabs">
@@ -238,11 +250,11 @@
                   <i data-lucide="trash-2"></i> Waste
                 </button>
               </div>
-              
+
               <!-- Tab Content: HOME ENERGY -->
               <div class="calc-tab-content active" id="calc-content-energy">
                 <h3 style="margin-bottom: 1.5rem;">Home Energy Consumption</h3>
-                
+
                 <!-- Electricity Input -->
                 <div class="calc-form-group">
                   <div class="calc-form-label">
@@ -250,10 +262,11 @@
                     <span class="calc-form-value"><span id="val-electricity">250</span> kWh</span>
                   </div>
                   <div class="slider-container">
-                    <input type="range" min="0" max="1000" value="250" class="calc-slider" id="input-electricity" oninput="updateCalculatorValues()">
+                    <input type="range" min="0" max="1000" value="250" class="calc-slider" id="input-electricity"
+                      oninput="updateCalculatorValues()">
                   </div>
                 </div>
-                
+
                 <!-- Natural Gas Input -->
                 <div class="calc-form-group">
                   <div class="calc-form-label">
@@ -261,13 +274,15 @@
                     <span class="calc-form-value"><span id="val-gas">50</span> therms</span>
                   </div>
                   <div class="slider-container">
-                    <input type="range" min="0" max="300" value="50" class="calc-slider" id="input-gas" oninput="updateCalculatorValues()">
+                    <input type="range" min="0" max="300" value="50" class="calc-slider" id="input-gas"
+                      oninput="updateCalculatorValues()">
                   </div>
                 </div>
-                
+
                 <!-- Clean Energy Option -->
                 <div class="calc-form-group">
-                  <label class="calc-form-label" style="margin-bottom: 0.5rem; display: block; font-weight: 600;">Clean Energy Sourcing</label>
+                  <label class="calc-form-label" style="margin-bottom: 0.5rem; display: block; font-weight: 600;">Clean
+                    Energy Sourcing</label>
                   <div class="option-select-grid">
                     <div class="option-select-card active" id="opt-clean-none" onclick="selectCleanEnergy('none')">
                       <i data-lucide="zap-off"></i>
@@ -287,11 +302,11 @@
                   </div>
                 </div>
               </div>
-              
+
               <!-- Tab Content: TRANSPORTATION -->
               <div class="calc-tab-content" id="calc-content-transport">
                 <h3 style="margin-bottom: 1.5rem;">Transportation & Travel</h3>
-                
+
                 <!-- Car Distance -->
                 <div class="calc-form-group">
                   <div class="calc-form-label">
@@ -299,13 +314,15 @@
                     <span class="calc-form-value"><span id="val-car-miles">150</span> miles</span>
                   </div>
                   <div class="slider-container">
-                    <input type="range" min="0" max="1000" value="150" class="calc-slider" id="input-car-miles" oninput="updateCalculatorValues()">
+                    <input type="range" min="0" max="1000" value="150" class="calc-slider" id="input-car-miles"
+                      oninput="updateCalculatorValues()">
                   </div>
                 </div>
-                
+
                 <!-- Vehicle Fuel Type -->
                 <div class="calc-form-group">
-                  <label class="calc-form-label" style="margin-bottom: 0.5rem; display: block; font-weight: 600;">Vehicle Engine Type</label>
+                  <label class="calc-form-label"
+                    style="margin-bottom: 0.5rem; display: block; font-weight: 600;">Vehicle Engine Type</label>
                   <div class="option-select-grid">
                     <div class="option-select-card active" id="opt-fuel-gas" onclick="selectFuelType('gas')">
                       <i data-lucide="fuel"></i>
@@ -324,7 +341,7 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <!-- Flights Input -->
                 <div class="calc-form-group">
                   <div class="calc-form-label">
@@ -332,10 +349,11 @@
                     <span class="calc-form-value"><span id="val-flights">2</span> flights</span>
                   </div>
                   <div class="slider-container">
-                    <input type="range" min="0" max="20" value="2" class="calc-slider" id="input-flights" oninput="updateCalculatorValues()">
+                    <input type="range" min="0" max="20" value="2" class="calc-slider" id="input-flights"
+                      oninput="updateCalculatorValues()">
                   </div>
                 </div>
-                
+
                 <!-- Public Transit Input -->
                 <div class="calc-form-group">
                   <div class="calc-form-label">
@@ -343,16 +361,19 @@
                     <span class="calc-form-value"><span id="val-transit">5</span> hours</span>
                   </div>
                   <div class="slider-container">
-                    <input type="range" min="0" max="40" value="5" class="calc-slider" id="input-transit" oninput="updateCalculatorValues()">
+                    <input type="range" min="0" max="40" value="5" class="calc-slider" id="input-transit"
+                      oninput="updateCalculatorValues()">
                   </div>
                 </div>
               </div>
-              
+
               <!-- Tab Content: DIET & FOOD -->
               <div class="calc-tab-content" id="calc-content-diet">
                 <h3 style="margin-bottom: 1.5rem;">Diet & Food Choice</h3>
-                <p style="color: var(--neutral-400); margin-bottom: 1.5rem; font-size: 0.9rem;">Food production is responsible for significant emissions. Select the diet profile that best matches your typical eating habits:</p>
-                
+                <p style="color: var(--neutral-400); margin-bottom: 1.5rem; font-size: 0.9rem;">Food production is
+                  responsible for significant emissions. Select the diet profile that best matches your typical eating
+                  habits:</p>
+
                 <div class="option-select-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                   <div class="option-select-card" id="opt-diet-meat-heavy" onclick="selectDiet('meat-heavy')">
                     <i data-lucide="beef"></i>
@@ -376,11 +397,11 @@
                   </div>
                 </div>
               </div>
-              
+
               <!-- Tab Content: WASTE & RECYCLING -->
               <div class="calc-tab-content" id="calc-content-waste">
                 <h3 style="margin-bottom: 1.5rem;">Waste & Recycling Habits</h3>
-                
+
                 <!-- Waste volume -->
                 <div class="calc-form-group">
                   <div class="calc-form-label">
@@ -388,13 +409,15 @@
                     <span class="calc-form-value"><span id="val-waste">3</span> bags/week</span>
                   </div>
                   <div class="slider-container">
-                    <input type="range" min="0" max="15" value="3" class="calc-slider" id="input-waste" oninput="updateCalculatorValues()">
+                    <input type="range" min="0" max="15" value="3" class="calc-slider" id="input-waste"
+                      oninput="updateCalculatorValues()">
                   </div>
                 </div>
-                
+
                 <!-- Recycling options -->
                 <div class="calc-form-group">
-                  <label class="calc-form-label" style="margin-bottom: 0.5rem; display: block; font-weight: 600;">Recycling Habits</label>
+                  <label class="calc-form-label"
+                    style="margin-bottom: 0.5rem; display: block; font-weight: 600;">Recycling Habits</label>
                   <div class="option-select-grid">
                     <div class="option-select-card" id="opt-recycle-none" onclick="selectRecycling('none')">
                       <i data-lucide="frown"></i>
@@ -415,18 +438,18 @@
                 </div>
               </div>
             </div>
-            
+
             <!-- Live Results Sidebar -->
             <aside class="calc-result-widget glass-card" aria-label="Calculation Results Summary">
               <h3 class="widget-title">Live Carbon Rating</h3>
-              
+
               <div class="widget-gauge-container">
                 <svg class="widget-gauge-svg" viewBox="0 0 160 160">
                   <defs>
                     <linearGradient id="gradient-gauge" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="var(--primary)"/>
-                      <stop offset="50%" stop-color="var(--secondary)"/>
-                      <stop offset="100%" stop-color="var(--danger)"/>
+                      <stop offset="0%" stop-color="var(--primary)" />
+                      <stop offset="50%" stop-color="var(--secondary)" />
+                      <stop offset="100%" stop-color="var(--danger)" />
                     </linearGradient>
                   </defs>
                   <circle class="gauge-track" cx="80" cy="80" r="70"></circle>
@@ -437,42 +460,49 @@
                   <span class="widget-gauge-unit">tons CO2e / yr</span>
                 </div>
               </div>
-              
+
               <h4 class="widget-feedback low" id="calc-feedback-rating">Moderate Emissions</h4>
-              <p class="widget-comparison" id="calc-comparison-text">Your footprint is about 80% of the US national average (16 tons).</p>
-              
-              <button type="button" class="btn-primary btn-save-footprint" id="btn-save-calculation" onclick="saveCalculationResult()">
+              <p class="widget-comparison" id="calc-comparison-text">Your footprint is about 80% of the US national
+                average (16 tons).</p>
+
+              <button type="button" class="btn-primary btn-save-footprint" id="btn-save-calculation"
+                onclick="saveCalculationResult()">
                 <i data-lucide="save"></i>
                 <span>Save Footprint & Calculate</span>
               </button>
             </aside>
-            
+
           </div>
         </section>
-        
+
         <!-- SECTION 3: ACTION PLAN -->
         <section id="action-plan" class="page-section" aria-labelledby="section-title">
-          
+
           <div class="action-filter-bar">
-            <button type="button" class="filter-btn active" id="filter-all" onclick="filterActions('all')">All Challenges</button>
-            <button type="button" class="filter-btn" id="filter-high" onclick="filterActions('high')">High Impact</button>
-            <button type="button" class="filter-btn" id="filter-medium" onclick="filterActions('medium')">Medium Impact</button>
+            <button type="button" class="filter-btn active" id="filter-all" onclick="filterActions('all')">All
+              Challenges</button>
+            <button type="button" class="filter-btn" id="filter-high" onclick="filterActions('high')">High
+              Impact</button>
+            <button type="button" class="filter-btn" id="filter-medium" onclick="filterActions('medium')">Medium
+              Impact</button>
             <button type="button" class="filter-btn" id="filter-low" onclick="filterActions('low')">Low Impact</button>
-            <button type="button" class="filter-btn" id="filter-committed" onclick="filterActions('committed')">My Active Goals</button>
+            <button type="button" class="filter-btn" id="filter-committed" onclick="filterActions('committed')">My
+              Active Goals</button>
           </div>
-          
+
           <div class="actions-grid" id="actions-grid-container">
             <!-- Will be populated dynamically by app.js -->
           </div>
-          
+
         </section>
-        
+
         <!-- SECTION 4: INSIGHTS -->
         <section id="insights" class="page-section" aria-labelledby="section-title">
           <div class="insights-intro">
-            <p>Based on your current calculations, we have compiled localized, eco-friendly strategies to target your primary emission sources.</p>
+            <p>Based on your current calculations, we have compiled localized, eco-friendly strategies to target your
+              primary emission sources.</p>
           </div>
-          
+
           <div class="insights-grid">
             <!-- Recommendation Breakdown -->
             <div class="glass-card insight-main-card">
@@ -484,25 +514,31 @@
                 <!-- Dynamic recommendations loaded here -->
               </div>
             </div>
-            
+
             <!-- Ecological Educational Resources -->
             <div class="edu-cards">
               <div class="glass-card edu-card">
                 <h4><i data-lucide="info" style="width: 18px; height: 18px;"></i> What is Carbon Footprint?</h4>
-                <p>A carbon footprint represents the total greenhouse gas emissions (primarily carbon dioxide and methane) caused directly and indirectly by our individual lifestyles, travel, heating, diets, and waste disposal. Tracking it helps target high-impact reduction points.</p>
+                <p>A carbon footprint represents the total greenhouse gas emissions (primarily carbon dioxide and
+                  methane) caused directly and indirectly by our individual lifestyles, travel, heating, diets, and
+                  waste disposal. Tracking it helps target high-impact reduction points.</p>
               </div>
               <div class="glass-card edu-card">
                 <h4><i data-lucide="target" style="width: 18px; height: 18px;"></i> The Global Target</h4>
-                <p>To keep global warming under the 1.5°C threshold agreed in the Paris Accord, the global average footprint per person needs to drop from around 4.7 tons per year to under <strong>2.0 tons per year</strong> by 2050.</p>
+                <p>To keep global warming under the 1.5°C threshold agreed in the Paris Accord, the global average
+                  footprint per person needs to drop from around 4.7 tons per year to under <strong>2.0 tons per
+                    year</strong> by 2050.</p>
               </div>
               <div class="glass-card edu-card">
                 <h4><i data-lucide="globe" style="width: 18px; height: 18px;"></i> GCP Green Cloud Hosting</h4>
-                <p>Google Cloud Platform runs on 100% renewable energy mismatch coverage. Deploying your website to GCP Cloud Run or Firebase Hosting leverages Google's carbon-neutral data centers, reducing the digital footprint of this application!</p>
+                <p>Google Cloud Platform runs on 100% renewable energy mismatch coverage. Deploying your website to GCP
+                  Cloud Run or Firebase Hosting leverages Google's carbon-neutral data centers, reducing the digital
+                  footprint of this application!</p>
               </div>
             </div>
           </div>
         </section>
-        
+
       </div>
     </main>
   </div>
@@ -515,4 +551,5 @@
   <!-- Main Application Logic -->
   <script src="js/app.js"></script>
 </body>
+
 </html>
